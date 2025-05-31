@@ -3,4 +3,4 @@ Projekt za predmet Računalna inteligencija
 
 # Opis
 U ovom projektu će se implementirati neuronska mreža za predviđanje cijene vožnje taxijem. Za treniranje mreže, odnosno podešavanje parametara koristit će se gotovi podaci i primjeniti PSO.
-Podaci: https://www.kaggle.com/datasets/hrish4/taxi-trip-fare-data-2023
+<br> Podaci: https://www.kaggle.com/datasets/hrish4/taxi-trip-fare-data-2023
