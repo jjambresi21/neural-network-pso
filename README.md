@@ -10,11 +10,11 @@ Pokretanje skripte:
 ```
 python run.py
 ```
-Pokretanjem skripte se postavlja virtualna okolina sa svim potrebnim ovisnostima te se pokreće datoteka `neural_network.py`. Ako virtualna okolina već postoji, odmah se pokreće `neural_network.py`.
+Pokretanjem skripte se postavlja virtualna okolina sa svim potrebnim ovisnostima te se pokreće datoteka `main.py`. Ako virtualna okolina već postoji, odmah se pokreće `main.py`.
 
 <br> Ako se ne želi postavljati virtualna okolina, onda se može pokrenuti komandom 
 ```
-python neural_network.py
+python main.py
 ```
 samo treba osigurati da su sve potrebne ovisnosti instalirani 
 ```

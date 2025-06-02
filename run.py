@@ -4,7 +4,7 @@ import subprocess
 
 VENV_DIR = ".venv"
 REQUIREMENTS = "requirements.txt"
-TARGET_SCRIPT = "neural_network.py"
+TARGET_SCRIPT = "main.py"
 
 def clear_screen():
     if os.name == 'nt':
