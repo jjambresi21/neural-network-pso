@@ -46,8 +46,8 @@ class NeuralNetwork:
     
     def evaluate_weights(self, weights, X, y):
         W1, b1, W2, b2 = self.decode_weights(weights)
-        y_pred = self.forward(X, W1=W1, b1=b1, W2=W2, b2=b2)
-        return self.mse_loss(y, y_pred)
+        y_pred = self.forwardpropagation(X, W1=W1, b1=b1, W2=W2, b2=b2)
+        return self.calculate_mse_loss(y, y_pred)
 
     def predict(self, new_input, weights=None, W1=None, b1=None, W2=None, b2=None):
         if weights is not None:
