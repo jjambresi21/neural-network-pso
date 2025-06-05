@@ -32,6 +32,7 @@ class PSO:
                     self.gbest_position = self.swarm[i]
                     self.gbest_score = current_score
             
+            for i in range(self.num_particles):
                 r1, r2 = np.random.random(2)
                 cognitive = self.c1 * r1 * (self.pbest_positions[i] - self.swarm[i])
                 social = self.c2 * r2 * (self.gbest_position - self.swarm[i])
