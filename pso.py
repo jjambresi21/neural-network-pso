@@ -22,8 +22,8 @@ class PSO:
     def optimize(self):
         for iteration in range(self.max_iter):
             for i in range(self.num_particles):
-                current_score = self.nn.calculate_mse_loss(self.y, self.nn.forwardpropagation(self.X, self.swarm[i]))
-                
+                current_score = self.nn.evaluate_weights(self.swarm[i], self.X, self.y)
+
                 if current_score < self.pbest_scores[i]:
                     self.pbest_positions[i] = self.swarm[i]
                     self.pbest_scores[i] = current_score
@@ -32,7 +32,6 @@ class PSO:
                     self.gbest_position = self.swarm[i]
                     self.gbest_score = current_score
             
-            for i in range(self.num_particles):
                 r1, r2 = np.random.random(2)
                 cognitive = self.c1 * r1 * (self.pbest_positions[i] - self.swarm[i])
                 social = self.c2 * r2 * (self.gbest_position - self.swarm[i])
