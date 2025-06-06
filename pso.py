@@ -18,6 +18,7 @@ class PSO:
         self.pbest_scores = np.full(num_particles, np.inf)
         self.gbest_position = None
         self.gbest_score = np.inf
+        self.convergence = []
     
     def optimize(self):
         for iteration in range(self.max_iter):
@@ -32,6 +33,8 @@ class PSO:
                     self.gbest_position = self.swarm[i]
                     self.gbest_score = current_score
             
+            self.convergence.append(self.gbest_score)
+            
             for i in range(self.num_particles):
                 r1, r2 = np.random.random(2)
                 cognitive = self.c1 * r1 * (self.pbest_positions[i] - self.swarm[i])
@@ -40,8 +43,8 @@ class PSO:
                 self.velocities[i] = self.w * self.velocities[i] + cognitive + social
                 self.swarm[i] += self.velocities[i]
             
-            # Ispis najboljeg rezultata svakih 10 iteracija
-            # if self.verbose and (iteration % 10 == 0 or iteration == self.max_iter - 1):
-            #     print(f"Iteracija {iteration+1}/{self.max_iter}, Najbolji MSE: {self.gbest_score:.6f}")
+            #Ispis najboljeg rezultata svakih 10 iteracija
+            if self.verbose and (iteration % 10 == 0 or iteration == self.max_iter - 1):
+                print(f"Iteracija {iteration+1}/{self.max_iter}, Najbolji MSE: {self.gbest_score:.6f}")
         
-        return self.gbest_position, self.gbest_score
+        return self.gbest_position, self.gbest_score, self.convergence
